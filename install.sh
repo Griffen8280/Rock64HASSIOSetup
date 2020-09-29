@@ -4,7 +4,7 @@ SUDO=''
 if (( $EUID != 0 )); then
     SUDO='sudo'
 fi
-$SUDO apt update && $SUDO apt install python-smbus git -y
+$SUDO apt update && $SUDO apt install python-smbus git python3 -y
 
 git clone --depth=1 "https://github.com/Leapo/Rock64-R64.GPIO.git"
 
