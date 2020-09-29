@@ -9,9 +9,9 @@ $SUDO apt update && $SUDO apt install python-smbus git python3 -y
 git clone --depth=1 "https://github.com/Leapo/Rock64-R64.GPIO.git"
 
 cd Rock64-R64.GPIO
-mv -R R64 ../
+mv R64 ../
 cd ..
-rm -R Rock64-R64.GPIO
+rm -Rf Rock64-R64.GPIO
 
 echo "Rock64 GPIO should now be installed, now checking revision"
 revision=`python -c "import R64.GPIO as GPIO; print GPIO.RPI_REVISION"`
