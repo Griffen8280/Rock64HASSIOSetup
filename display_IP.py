@@ -1,4 +1,4 @@
-import R64.GPIO as GPIO
+import lcddriver.py
 import time
 import datetime
 import subprocess
