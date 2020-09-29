@@ -1,9 +1,16 @@
+#!/usr/bin/env python
+
+#import libraries
 import lcddriver.py
 import time
 import datetime
 import subprocess
+
+#designate the display variable and get the IP of the machine
 display = lcddriver.lcd()
 IP = subprocess.check_output(["hostname","-I"]).split()[0]
+
+#attempt to display the info
 try:
     print("Writing to display")
     while True:
