@@ -1,4 +1,4 @@
-# Rock64I2CLCD
+# Rock64 I2C LCD
 Setup an I2C LCD screen on a Rock64 running dietpi OS
 
 This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel which includes the following:
