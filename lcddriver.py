@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Driver library for LCD display. Provided by Ryanteck LTD.
 # The procedures below can all be called in your own code!
 # You can just stick to the print string one though ;-)
