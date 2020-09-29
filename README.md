@@ -7,7 +7,7 @@ This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel whic
 3. 16Gb MicroSD card
 4. 5V 3A 1.35mm Power Adapter
 
-This board will be running pi-hole on my network which can be installed by following their tutorials here:
+This board will be running pi-hole on my network which can be installed by following their tutorials here:  
 https://pi-hole.net
 
 The modules and scripts included here are to setup the LCD screen to output the running status of the pi-hole application and the IP address of the device.
