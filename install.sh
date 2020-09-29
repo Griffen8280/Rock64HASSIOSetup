@@ -4,9 +4,16 @@ SUDO=''
 if (( $EUID != 0 )); then
     SUDO='sudo'
 fi
-$SUDO apt update && $SUDO apt install python-smbus -y
+$SUDO apt update && $SUDO apt install python-smbus git -y
 
-echo "Should now be installed, now checking revision"
+git clone --depth=1 "https://github.com/Leapo/Rock64-R64.GPIO.git"
+
+cd Rock64-R64.GPIO
+mv -R R64 ../
+cd ..
+rm -R Rock64-R64.GPIO
+
+echo "Rock64 GPIO should now be installed, now checking revision"
 revision=`python -c "import R64.GPIO as GPIO; print GPIO.RPI_REVISION"`
 
 if [ $revision = "1" ]
