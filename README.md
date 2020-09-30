@@ -1,5 +1,5 @@
 # Rock64 I2C LCD
-Setup an I2C LCD screen on a Rock64 running dietpi OS
+Setup an I2C LCD screen on a Rock64 running dietpi OS and the PiHole application
 
 This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel which includes the following:
 1. Rock64 SBC (1G of RAM)
