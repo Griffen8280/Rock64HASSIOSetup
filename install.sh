@@ -13,9 +13,12 @@ mv R64 ../
 cd ..
 rm -Rf Rock64-R64.GPIO
 
-echo "Rock64 GPIO should now be installed, now checking revision"
+for file in R64/*
+do
+	if [ "${file}" == "*.py" ]
+	then
+		chmod +x $file
+	fi
+done
 
-echo "Should be now all finished. Please press any key to now reboot. After rebooting run"
-
-read -n1 -s
-$SUDO reboot
+echo "Rock64 GPIO should now be installed"
