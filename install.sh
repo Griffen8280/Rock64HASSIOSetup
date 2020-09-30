@@ -13,12 +13,11 @@ mv R64 ../
 cd ..
 rm -Rf Rock64-R64.GPIO
 
-for file in R64/*
-do
-	if [ "${file}" == "*.py" ]
-	then
-		chmod +x $file
-	fi
-done
+cd R64
+chmod +x *.py
+cd GPIO
+chmod +x *.py
+cd ../..
+$SUDO cp -R R64 /usr/local/lib/python2.7/dist-packages/
 
 echo "Rock64 GPIO should now be installed"
