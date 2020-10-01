@@ -7,7 +7,7 @@ if (( $EUID != 0 )); then
 fi
 
 #Update the system cache and install needed dependancies for python
-$SUDO apt update && $SUDO apt install python-smbus git python3 -y
+$SUDO apt update && $SUDO apt install python-smbus git python3 i2c-tools -y
 
 #Get the Rock64 GPIO drivers and install them
 git clone --depth=1 "https://github.com/Leapo/Rock64-R64.GPIO.git"
