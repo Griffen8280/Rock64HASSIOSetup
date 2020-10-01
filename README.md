@@ -1,5 +1,5 @@
-# Rock64 I2C LCD
-Setup an I2C LCD screen on a Rock64 running dietpi OS and the PiHole application
+# Rock64 Hass.io Installer
+Setup an I2C LCD screen on a Rock64 running a debian-OS and the Home-Assistant Application
 
 This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel which includes the following:
 1. Rock64 SBC (1G of RAM)
@@ -7,7 +7,10 @@ This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel whic
 3. 16Gb MicroSD card
 4. 5V 3A 1.35mm Power Adapter
 
-This board will be running pi-hole on my network which can be installed by following their tutorials here:  
-https://pi-hole.net
+This board will be running Home-Assistant application which you can research here:  
+https://www.home-assistant.io/
 
-The modules and scripts included here are to setup the LCD screen to output the running status of the pi-hole application and the IP address of the device.
+Information about the Hass.io supervisor plugin can be found here:  
+https://www.home-assistant.io/hassio/
+
+The modules and scripts included here are to setup the LCD screen to output the running status of the Home Assistant application and the IP address of the device.  It will also install the docker subsystem and pull all needed modules to setup the Home Assistant/hassio supervisor.
