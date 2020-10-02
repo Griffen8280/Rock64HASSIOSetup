@@ -28,4 +28,4 @@ Run the following commands on the cli interface:
 2. git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
 3. cd Rock64HASSIOSetup
 4. chmod +x install.sh
-5. ./install.sh
+5. sudo ./install.sh
