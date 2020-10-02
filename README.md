@@ -2,6 +2,10 @@
 Setup an I2C LCD screen(16x4) on a Rock64 running a debian-OS and the Home-Assistant Application  
 For Example mrfixit2001 maintains a great debian release for Rock64 here:  
 https://github.com/mrfixit2001/debian_builds/releases
+And AyuFan has great ubuntu based releases here:  
+https://github.com/ayufan-rock64
+
+If you use AyuFan's release don't forget to run sudo apt-get install linux-rock64 -y after booting  
 
 This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel which includes the following:  
 1. Rock64 SBC (1G of RAM)  
