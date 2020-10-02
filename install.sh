@@ -16,12 +16,24 @@ $SUDO cp screenstartup.conf /etc/systemd
 
 #Setup a check to see if docker is already installed then skip setup if not needed
 #Setup the docker subsystem and install Home Assistant/Hass.io Supervisor
-$SUDO apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager -y
-curl -fsSL https://download.docker.com/linux/debian/gpg | $SUDO apt-key add -
-$SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-$SUDO apt update
-$SUDO apt install -y docker-ce
-sleep 3s
+if ! command -v docker &> /dev/null
+then
+    $SUDO apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager -y
+    if [ `lsb_release -cs` == "buster" ]
+    then
+        curl -fsSL https://download.docker.com/linux/debian/gpg | $SUDO apt-key add -
+        $SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+        $SUDO apt update
+        $SUDO apt install -y docker-ce
+        sleep 3s
+    else
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | $SUDO apt-key add -
+        $SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        $SUDO apt update
+        $SUDO apt install -y docker-ce
+        sleep 3s
+fi
+
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s
 sleep 10s
 
