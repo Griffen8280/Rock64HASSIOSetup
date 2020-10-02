@@ -29,3 +29,5 @@ Run the following commands on the cli interface:
 3. cd Rock64HASSIOSetup
 4. chmod +x install.sh
 5. sudo ./install.sh
+
+This process may take a bit of time to complete and your machine will most likely drop off the network briefly.
