@@ -32,5 +32,8 @@ Run the following commands on the cli interface:
 3. cd Rock64HASSIOSetup
 4. chmod +x install.sh (Note this step may not be needed, run ls -al before this command to see if it is executable already)
 5. sudo ./install.sh
+6. At the end of the install it should give you the url to access the install (http://192.168.XXX.XXX:8123)
+7. Proceed to the website and let Home Assistant finish setting up.
+8. Once it gets to the primary user creation screen you can either proceed or reboot to get the LCD screen working
 
-This process may take a bit of time to complete and your machine will most likely drop off the network briefly.
+This process may take a bit of time to complete, keep a video going in another tab while you wait :).
