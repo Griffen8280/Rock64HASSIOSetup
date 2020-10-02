@@ -20,3 +20,12 @@ Information about the Hass.io supervisor plugin can be found here:
 https://www.home-assistant.io/hassio/
 
 The modules and scripts included here are to setup the LCD screen to output the running status of the Home Assistant application and the IP address of the device.  It will also install the docker subsystem and pull all needed modules to setup the Home Assistant/hassio supervisor.
+
+
+# Installation Instructions
+Run the following commands on the cli interface:  
+1. cd ~/
+2. git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
+3. cd Rock64HASSIOSetup
+4. chmod +x install.sh
+5. ./install.sh
