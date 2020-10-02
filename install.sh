@@ -12,7 +12,10 @@ $SUDO apt update && $SUDO apt install python-smbus git python3 apt-transport-htt
 #Prep and copy the LCD script to bin
 chmod +x display_IP.py
 $SUDO cp display_IP.py /bin
-$SUDO cp screenstartup.conf /etc/systemd
+$SUDO cp screenstartup.service /lib/systemd/system
+$SUDO chmod 644 /lib/systemd/system/screenstartup.service
+$SUDO systemctl daemon-reload
+$SUDO systemctl enable screenstartup.service
 
 #Setup a check to see if docker is already installed then skip setup if not needed
 #Setup the docker subsystem and install Home Assistant/Hass.io Supervisor
