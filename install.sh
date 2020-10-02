@@ -6,8 +6,8 @@ if (( $EUID != 0 )); then
     SUDO='sudo'
 fi
 
-#Update the system cache and install needed dependancies for python
-$SUDO apt update && $SUDO apt install python-smbus git python3 -y
+#Update the system cache and install needed dependancies for all this to work
+$SUDO apt update && $SUDO apt install python-smbus git python3 apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager apparmor avahi-daemon -y
 
 #Prep and copy the LCD script to bin
 chmod +x display_IP.py
@@ -18,7 +18,6 @@ $SUDO cp screenstartup.conf /etc/systemd
 #Setup the docker subsystem and install Home Assistant/Hass.io Supervisor
 if ! command -v docker &> /dev/null
 then
-    $SUDO apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager apparmor avahi-daemon -y
     if [ `lsb_release -cs` == "buster" ]
     then
         curl -fsSL https://download.docker.com/linux/debian/gpg | $SUDO apt-key add -
