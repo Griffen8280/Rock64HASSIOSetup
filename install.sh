@@ -32,11 +32,15 @@ then
         $SUDO apt update
         $SUDO apt install -y docker-ce
         sleep 3s
+    fi
 fi
 
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s
+echo "All done with docker container pull"
+echo "Allowing initial startup to complete"
 sleep 10s
 
 #reboot the machine for the tools install to take affect
-#$SUDO reboot  #May not be needed
+echo "Rebooting machine to finalize setup"
+$SUDO reboot  #May not be needed
 
