@@ -37,12 +37,13 @@ then
     fi
 fi
 
-$SUDO curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -m aarch64
+$SUDO curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s -m raspberrypi3-64
 echo "All done with docker container pull"
 echo "Allowing initial startup to complete"
 sleep 10s
+echo "The LCD screen may not work until after reboot"
 
 #reboot the machine for the tools install to take affect
-echo "Rebooting machine to finalize setup"
-$SUDO reboot  #May not be needed
+#echo "Rebooting machine to finalize setup"
+#$SUDO reboot  #May not be needed
 
