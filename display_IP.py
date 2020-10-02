@@ -85,8 +85,9 @@ def main():
     
     # Create the subprocesses for gathering data
     IP = subprocess.check_output(["hostname","-I"]).split()[0]
+    SVC = subprocess.check_output(["systemctl","is-active","docker"])
     # Write to Screen
-    lcd_string("Hass.io ",LCD_LINE_1)
+    lcd_string("Docker = "+str.strip(SVC),LCD_LINE_1)
     lcd_string(str(IP),LCD_LINE_2)
 
     time.sleep(3)
