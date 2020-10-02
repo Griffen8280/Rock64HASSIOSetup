@@ -1,0 +1,10 @@
+[Unit]
+Description=LCD Activator
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python /bin/display_IP.py
+
+[Install]
+WantedBy=multi-user.target
