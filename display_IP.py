@@ -75,9 +75,6 @@ def lcd_string(message,line):
   for i in range(LCD_WIDTH):
     lcd_byte(ord(message[i]),LCD_CHR)
 
-#Create the subprocesses for gathering data
-IP = subprocess.check_output(["hostname","-I"]).split()[0]
-
 def main():
   # Main program block
 
@@ -85,9 +82,11 @@ def main():
   lcd_init()
 
   while True:
-
-    # Send some test
-    lcd_string("RPiSpy         <",LCD_LINE_1)
+    
+    # Create the subprocesses for gathering data
+    IP = subprocess.check_output(["hostname","-I"]).split()[0]
+    # Write to Screen
+    lcd_string("Hass.io ",LCD_LINE_1)
     lcd_string(str(IP),LCD_LINE_2)
 
     time.sleep(3)
