@@ -5,7 +5,8 @@ import time
 import subprocess
 
 # Define some device parameters
-I2C_ADDR  = 0x3f # I2C device address
+#I2C_ADDR  = 0x27 # Typical I2C address for pins 3,5
+I2C_ADDR  = 0x3f # Typical I2C address for pins 27,28
 LCD_WIDTH = 16   # Maximum characters per line
 
 # Define some device constants
