@@ -34,3 +34,8 @@ $SUDO apt update
 $SUDO apt install -y docker-ce
 sleep 3s
 curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s
+sleep 10s
+
+#reboot the machine for the tools install to take affect
+$SUDO reboot
+
