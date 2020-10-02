@@ -39,7 +39,7 @@ fi
 
 $SUDO curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh > hassioinstaller.sh
 chmod +x hassioinstaller.sh
-$SUDO hassioinstaller.sh -m raspberrypi3-64
+$SUDO /bin/bash ~/Rock64HASSIOSetup/hassioinstaller.sh -m raspberrypi3-64
 echo "All done with docker container pull"
 echo "Allowing initial startup to complete"
 sleep 10s
