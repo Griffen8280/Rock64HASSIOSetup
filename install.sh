@@ -24,13 +24,13 @@ then
     if [ `lsb_release -cs` == "buster" ]
     then
         curl -fsSL https://download.docker.com/linux/debian/gpg | $SUDO apt-key add -
-        $SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+        $SUDO add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
         $SUDO apt update
         $SUDO apt install -y docker-ce
         sleep 3s
     else
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | $SUDO apt-key add -
-        $SUDO add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        $SUDO add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
         $SUDO apt update
         $SUDO apt install -y docker-ce
         sleep 3s
