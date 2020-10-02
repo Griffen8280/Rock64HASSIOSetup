@@ -37,7 +37,7 @@ then
     fi
 fi
 
-curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s
+$SUDO curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh | bash -s
 echo "All done with docker container pull"
 echo "Allowing initial startup to complete"
 sleep 10s
