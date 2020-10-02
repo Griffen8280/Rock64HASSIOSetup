@@ -7,7 +7,7 @@ https://github.com/ayufan-rock64 or https://wiki.pine64.org/index.php/ROCK64_Sof
 If you use AyuFan's release don't forget to run sudo apt-get install linux-rock64 -y after booting  
 Also you can use dietpi as a base OS if you prefer and still install this package instead of the one available within the dietpi software center.  
 The primary difference is that this script installs Hassio with the supervisor where the dietpi software center only installs Hassio.
-https://wiki.pine64.org/index.php/ROCK64_Software_Release#DietPi
+https://dietpi.com/downloads/images/DietPi_Rock64-ARMv8-Buster.7z
 
 
 This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel which includes the following:  
