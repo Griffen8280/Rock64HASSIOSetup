@@ -1,11 +1,14 @@
 # Rock64 Hass.io Installer
 Setup an I2C LCD screen(16x4) on a Rock64 running a debian-OS and the Home-Assistant Application  
 For Example mrfixit2001 maintains a great debian release for Rock64 here:  
-https://github.com/mrfixit2001/debian_builds/releases
+https://github.com/mrfixit2001/debian_builds/releases or https://wiki.pine64.org/index.php/ROCK64_Software_Release#Debian_by_mrfixit2001  
 And AyuFan has great ubuntu based releases here:  
-https://github.com/ayufan-rock64
-
+https://github.com/ayufan-rock64 or https://wiki.pine64.org/index.php/ROCK64_Software_Release#Ubuntu_18.04_Bionic  
 If you use AyuFan's release don't forget to run sudo apt-get install linux-rock64 -y after booting  
+Also you can use dietpi as a base OS if you prefer and still install this package instead of the one available within the dietpi software center.  
+The primary difference is that this script installs Hassio with the supervisor where the dietpi software center only installs Hassio.
+https://wiki.pine64.org/index.php/ROCK64_Software_Release#DietPi
+
 
 This project came out of repurposing a Iconikal Rockchip SBC Recon Sentinel which includes the following:  
 1. Rock64 SBC (1G of RAM)  
@@ -27,7 +30,7 @@ Run the following commands on the cli interface:
 1. cd ~/
 2. git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
 3. cd Rock64HASSIOSetup
-4. chmod +x install.sh
+4. chmod +x install.sh (Note this step may not be needed, run ls -al before this command to see if it is executable already)
 5. sudo ./install.sh
 
 This process may take a bit of time to complete and your machine will most likely drop off the network briefly.
