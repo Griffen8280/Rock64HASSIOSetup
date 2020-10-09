@@ -31,7 +31,7 @@ Run the following commands on the cli interface:
 2. git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
 3. cd Rock64HASSIOSetup
 4. chmod +x install.sh (Note this step may not be needed, run ls -al before this command to see if it is executable already)
-5. You may need to open the install.sh script and adjust the line to specify what machine you are installing to.  Starting at line 42 there is a brief explanation and table of what machine types can be used.
+5. You may need to open the install.sh script and adjust the line to specify what machine you are installing to.  Starting at line 42 there is a brief explanation and table of what machine types can be used.  Default for this script is to install to Raspberry-pi 3 64bit/Rock64.
 6. sudo ./install.sh
 7. At the end of the install it should give you the url to access the install (http://192.168.XXX.XXX:8123)
 8. Proceed to the website and let Home Assistant finish setting up.
