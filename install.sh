@@ -39,7 +39,14 @@ fi
 
 $SUDO curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh > hassioinstaller.sh
 chmod +x hassioinstaller.sh
-$SUDO /bin/bash ~/Rock64HASSIOSetup/hassioinstaller.sh -m raspberrypi3-64
+#The following is the list of machine types you can specify and what they are for
+#intel-nuc = Intel Nuc computer || odroid-c2 = The Odroid C2 or derivative machines
+#odroid-n2 = Odroid-N2 or derivative machines || odroid-xu = Odroid-XU or derivative machines
+#qemuarm = 32bit Arm based vm || qemuarm-64 = 64bit Arm based vm || qemux86 = 32bit x86 CPU based vm
+#qemux86-64 = 64bit x86 CPU based vm || raspberrypi = Original 32bit pi || raspberrypi2 = Original 32bit pi2
+#raspberrypi3 = Original 32bit pi3 || raspberrypi4 = Original 32bit pi4 || raspberrypi3-64 = Original 64bit pi3
+#raspberrypi4-64 = Original 64bit pi4 || tinker = Asus Tinker board
+$SUDO /bin/bash ~/Rock64HASSIOSetup/hassioinstaller.sh -m raspberrypi3-64  #For Rock64 raspberrypi3-64 will work here
 echo "All done with docker container pull"
 echo "Allowing initial startup to complete"
 sleep 10s
