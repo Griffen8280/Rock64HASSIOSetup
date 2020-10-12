@@ -22,7 +22,7 @@ https://www.home-assistant.io/
 Information about the Hass.io supervisor plugin can be found here:  
 https://www.home-assistant.io/hassio/
 
-The modules and scripts included here are to setup the LCD screen to output the running status of the Home Assistant application and the IP address of the device.  It will also install the docker subsystem and pull all needed modules to setup the Home Assistant/hassio supervisor.
+The modules and scripts included here are to setup the LCD screen to output the running status of the Docker service and the IP address of the device.  It will also install the Docker subsystem and pull all needed modules to setup the Home Assistant/hassio supervisor.
 
 
 # Installation Instructions
