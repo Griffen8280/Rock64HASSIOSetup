@@ -11,7 +11,9 @@ $SUDO apt update && $SUDO apt install python-smbus git python3 apt-transport-htt
 
 #Prep and copy the LCD script to bin
 chmod +x display_IP.py
+chmod +x disp_shutdown.py
 $SUDO cp display_IP.py /bin
+$SUDO cp disp_shutdown.py /bin
 $SUDO cp screenstartup.service /lib/systemd/system
 $SUDO chmod 644 /lib/systemd/system/screenstartup.service
 $SUDO systemctl daemon-reload
