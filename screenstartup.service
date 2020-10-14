@@ -1,12 +1,14 @@
 [Unit]
 Description=LCD Activator
 After=multi-user.target
+Before=shutdown.target reboot.target
 
 [Service]
 Type=idle
 ExecStart=/usr/bin/python /bin/display_IP.py
 Restart=on-failure
 RestartSec=5s
+ExecStop=/usr/bin/python /bin/disp_shutdown.py
 
 [Install]
 WantedBy=multi-user.target
