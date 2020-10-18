@@ -43,6 +43,8 @@ then
     fi
 fi
 
+echo "Allow for Docker services to start"
+sleep 5s
 $SUDO curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh > hassioinstaller.sh
 chmod +x hassioinstaller.sh
 #The following is the list of machine types you can specify and what they are for
