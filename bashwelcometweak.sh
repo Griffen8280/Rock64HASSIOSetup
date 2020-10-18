@@ -16,7 +16,7 @@
 function install_bashwelcometweak() {
     remove_bashwelcometweak
     cat >> "$HOME/.bashrc" <<\_EOF_
-#Rock64 PROFILE START
+#ROCK64 PROFILE START
 function getIPAddress() {
     local ip_route
     ip_route=$(ip -4 route get 8.8.8.8 2>/dev/null)
