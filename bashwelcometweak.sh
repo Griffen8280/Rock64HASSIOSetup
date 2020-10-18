@@ -17,7 +17,7 @@ home=~/ # Primary home location
 function install_bashwelcometweak() {
     remove_bashwelcometweak
     cat >> "$home/.bashrc" <<\_EOF_
-# PIHOLE PROFILE START
+# Rock64 PROFILE START
 function getIPAddress() {
     local ip_route
     ip_route=$(ip -4 route get 8.8.8.8 2>/dev/null)
@@ -26,7 +26,7 @@ function getIPAddress() {
     fi
     [[ -n "$ip_route" ]] && grep -oP "src \K[^\s]+" <<< "$ip_route"
 }
-function pihole_welcome() {
+function rock64_welcome() {
     local upSeconds="$(/usr/bin/cut -d. -f1 /proc/uptime)"
     local secs=$((upSeconds%60))
     local mins=$((upSeconds/60%60))
@@ -73,18 +73,18 @@ function pihole_welcome() {
     local bfgcyn="${bld}$(tput setaf 6)"
     local bfgwht="${bld}$(tput setaf 7)"
     local logo=(
-        "${fgwht}@${bfggrn}(${fgwht}@@@@@@@@@@@@@@@@@@"
-        "${fgwht}@${bfggrn}(((((((${fgwht}@@@@@@@@@@@@"
-        "${fgwht}@@${bfggrn}((((${fgred}%${bfggrn}(${fggrn}/${fgwht}@@@${fggrn}////${fgwht}@@@@"
-        "${fgwht}@@@@@${bfggrn}(((${fgwht}@${fggrn}//////${fgwht}@@@@@"
-        "${fgwht}@@@@@@@@@${fgred}%%%${fgwht}@@@@@@@@"
-        "${fgwht}@@@@@@${fgred}%%%%%%%%${bfgred}&${fgwht}@@@@@"
-        "${fgwht}@@@${fgred}%%%%%%%%%%%${bfgred}&&&&${fgwht}@@"
-        "${fgwht}@${bfgred}&&&&&&&${fgwht}@@${fgred}%${fgwht}@@${bfgred}&&&&&&&"
-        "${bfgred}&&&&&&&&${fgwht}@@@@@${bfgred}&&&&&&&"
-        "${fgwht}@${bfgred}&&&&&&&${fgwht}@${fgred}%%%${fgwht}@@${bfgred}&&&&&${fgred}%"
-        "${fgwht}@@@@${bfgred}&&&${fgred}%%%%%%%%%%${fgwht}@@@"
-        "${fgwht}@@@@@@${bfgred}&${fgred}%%%%%%%%${fgwht}@@@@@"
+        "${fgwht}@@@@@@@@@@${fgcyn}&${fgwht}@@@@@@@@@@"
+        "${fgwht}@@@@@@@@${fgcyn}*****${fgwht}@@@@@@@@"
+        "${fgwht}@@@@${fgblu}((((${fgblk}%${fgwht}@@@${fgblu}((((${fgwht}@@@@@"
+        "${fgwht}@@@@${fgpur}#${fgblu}(((((((((((${fgwht}@@@@@"
+        "${fgwht}@${fgblu}((((${fgpur}#${fgwht}@${fgblu}((((((${fgwht}@@${fgblu}((((${fgblk}&${fgwht}@"
+        "${fgwht}@${fgblu}(((((${fgblk}%${fgwht}@@${fgblu}((${fgblk}%${fgwht}@@${fgblu}(((((${fgblk}&${fgwht}@"
+        "${fgwht}@@@${fgblu}((((((((((((((${fgblk}&${fgwht}@@@"
+        "${fgwht}${fgpur}#####${fgwht}@@${fgpur}#${fgblu}(((((${fgwht}@@${fgpur}#####${fgwht}@"
+        "${fgwht}@${fgpur}######${fgwht}@@${fgpur}##${fgwht}@@${fgblk}%${fgpur}#####${fgwht}@@"
+        "${fgwht}@@@${fgpur}##############${fgwht}@@@@"
+        "${fgwht}@@@@@@@@@${fgpur}##${fgblk}%${fgwht}@@@@@@@@@"
+        "${fgwht}@@@@@@@@@${fgpur}##${fgwht}@@@@@@@@@@"
         )
     local out
     local i
@@ -92,49 +92,49 @@ function pihole_welcome() {
         out+="  ${logo[$i]}  "
         case "$i" in
             0)
-                out+="${fggrn}$(date +"%A, %e %B %Y, %X")"
+                out+="${fgcyn}$(date +"%A, %e %B %Y, %X")"
                 ;;
             1)
-                out+="${fggrn}$(uname -srmo)"
+                out+="${fgcyn}$(uname -srmo)"
                 ;;
             3)
-                out+="${fgylw}${df_out[0]}"
+                out+="${fgcyn}${df_out[0]}"
                 ;;
             4)
                 out+="${fgwht}${df_out[1]}"
                 ;;
             5)
-                out+="${fgred}Uptime.............: ${UPTIME}"
+                out+="${fgblu}Uptime.............: ${UPTIME}"
                 ;;
             6)
-                out+="${fgred}Memory.............: $(grep MemFree /proc/meminfo | awk {'print $2'})kB (Free) / $(grep MemTotal /proc/meminfo | awk {'print $2'})kB (Total)"
+                out+="${fgblu}Memory.............: $(grep MemFree /proc/meminfo | awk {'print $2'})kB (Free) / $(grep MemTotal /proc/meminfo | awk {'print $2'})kB (Total)"
                 ;;
             7)
-                out+="${fgred}Running Processes..: $(ps ax | wc -l | tr -d " ")"
+                out+="${fgblu}Running Processes..: $(ps ax | wc -l | tr -d " ")"
                 ;;
             8)
-                out+="${fgred}IP Address.........: $(getIPAddress)"
+                out+="${fgblu}IP Address.........: $(getIPAddress)"
                 ;;
             9)
                 out+="Temperature........: CPU: ${cpuTempC}°C/${cpuTempF}°F GPU: ${gpuTempC}°C/${gpuTempF}°F"
                 ;;
             10)
-                out+="${fgwht}The PiHole Project, https://pi-hole.net"
+                out+="${fgwht}Rock64 SBC Info, http://wiki.pine64.org/index.php?title=ROCK64"
                 ;;
         esac
         out+="${rst}\n"
     done
     echo -e "\n$out"
 }
-pihole_welcome
-# PIHOLE PROFILE END
+rock64_welcome
+# ROCK64 PROFILE END
 _EOF_
 
 
 }
 
 function remove_bashwelcometweak() {
-    sed -i '/PIHOLE PROFILE START/,/PIHOLE PROFILE END/d' "$home/.bashrc"
+    sed -i '/ROCK64 PROFILE START/,/ROCK64 PROFILE END/d' "$home/.bashrc"
 }
 
 function gui_bashwelcometweak() {
