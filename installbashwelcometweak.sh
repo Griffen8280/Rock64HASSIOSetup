@@ -12,10 +12,9 @@
 # Also includes the logo for PiHole for a little personalization
 #
 
+remove_bashwelcometweak
+cat >> "$HOME/.bashrc" <<\_EOF_
 
-function install_bashwelcometweak() {
-    remove_bashwelcometweak
-    cat >> "$HOME/.bashrc" <<\_EOF_
 #ROCK64 PROFILE START
 function getIPAddress() {
     local ip_route
@@ -128,33 +127,3 @@ function rock64_welcome() {
 rock64_welcome
 #ROCK64 PROFILE END
 _EOF_
-
-
-}
-
-function remove_bashwelcometweak() {
-    sed -i '/ROCK64 PROFILE START/,/ROCK64 PROFILE END/d' "$HOME/.bashrc"
-}
-
-function gui_bashwelcometweak() {
-    local cmd=(dialog --backtitle "$__backtitle" --menu "Bash Welcome Tweak Configuration" 22 86 16)
-    local options=(
-        1 "Install Bash Welcome Tweak"
-        2 "Remove Bash Welcome Tweak"
-    )
-    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-    if [[ -n "$choice" ]]; then
-        case "$choice" in
-            1)
-                install_bashwelcometweak
-                dialog --title Complete --msgbox "Installed Bash Welcome Tweak." 22 30
-                ;;
-            2)
-                remove_bashwelcometweak
-                dialog --title Complete --msgbox "Removed Bash Welcome Tweak." 22 30
-                ;;
-        esac
-    fi
-}
-
-gui_bashwelcometweak
