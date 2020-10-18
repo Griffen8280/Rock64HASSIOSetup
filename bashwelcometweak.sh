@@ -73,18 +73,18 @@ function rock64_welcome() {
     local bfgcyn="${bld}$(tput setaf 6)"
     local bfgwht="${bld}$(tput setaf 7)"
     local logo=(
-        "${fgwht}@@@@@@@@@@${fgcyn}&${fgwht}@@@@@@@@@@"
-        "${fgwht}@@@@@@@@${fgcyn}*****${fgwht}@@@@@@@@"
-        "${fgwht}@@@@${fgblu}((((${fgblk}%${fgwht}@@@${fgblu}((((${fgwht}@@@@@"
-        "${fgwht}@@@@${fgpur}#${fgblu}(((((((((((${fgwht}@@@@@"
-        "${fgwht}@${fgblu}((((${fgpur}#${fgwht}@${fgblu}((((((${fgwht}@@${fgblu}((((${fgblk}&${fgwht}@"
-        "${fgwht}@${fgblu}(((((${fgblk}%${fgwht}@@${fgblu}((${fgblk}%${fgwht}@@${fgblu}(((((${fgblk}&${fgwht}@"
-        "${fgwht}@@@${fgblu}((((((((((((((${fgblk}&${fgwht}@@@"
-        "${fgwht}${fgpur}#####${fgwht}@@${fgpur}#${fgblu}(((((${fgwht}@@${fgpur}#####${fgwht}@"
-        "${fgwht}@${fgpur}######${fgwht}@@${fgpur}##${fgwht}@@${fgblk}%${fgpur}#####${fgwht}@@"
-        "${fgwht}@@@${fgpur}##############${fgwht}@@@@"
-        "${fgwht}@@@@@@@@@${fgpur}##${fgblk}%${fgwht}@@@@@@@@@"
-        "${fgwht}@@@@@@@@@${fgpur}##${fgwht}@@@@@@@@@@"
+        "${fgwht}@@@@@@@@@@@${fgcyn}&${fgwht}@@@@@@@@@@"
+        "${fgwht}@@@@@@@@@${fgcyn}*****${fgwht}@@@@@@@@"
+        "${fgwht}@@@@@${fgblu}((((${fgblk}%${fgwht}@@@${fgblu}((((${fgwht}@@@@@"
+        "${fgwht}@@@@@${fgpur}#${fgblu}(((((((((((${fgwht}@@@@@"
+        "${fgwht}@@${fgblu}((((${fgpur}#${fgwht}@${fgblu}((((((${fgwht}@@${fgblu}((((${fgblk}&${fgwht}@"
+        "${fgwht}@@${fgblu}(((((${fgblk}%${fgwht}@@${fgblu}((${fgblk}%${fgwht}@@${fgblu}(((((${fgblk}&${fgwht}@"
+        "${fgwht}@@@@${fgblu}((((((((((((((${fgblk}&${fgwht}@@@"
+        "${fgwht}@${fgpur}#####${fgwht}@@${fgpur}#${fgblu}(((((${fgwht}@@${fgpur}#####${fgwht}@"
+        "${fgwht}@@${fgpur}######${fgwht}@@${fgpur}##${fgwht}@@${fgblk}%${fgpur}#####${fgwht}@@"
+        "${fgwht}@@@@${fgpur}##############${fgwht}@@@@"
+        "${fgwht}@@@@@@@@@@${fgpur}##${fgblk}%${fgwht}@@@@@@@@@"
+        "${fgwht}@@@@@@@@@@${fgpur}##${fgwht}@@@@@@@@@@"
         )
     local out
     local i
@@ -104,16 +104,16 @@ function rock64_welcome() {
                 out+="${fgwht}${df_out[1]}"
                 ;;
             5)
-                out+="${fgblu}Uptime.............: ${UPTIME}"
+                out+="${fgpur}Uptime.............: ${UPTIME}"
                 ;;
             6)
-                out+="${fgblu}Memory.............: $(grep MemFree /proc/meminfo | awk {'print $2'})kB (Free) / $(grep MemTotal /proc/meminfo | awk {'print $2'})kB (Total)"
+                out+="${fgpur}Memory.............: $(grep MemFree /proc/meminfo | awk {'print $2'})kB (Free) / $(grep MemTotal /proc/meminfo | awk {'print $2'})kB (Total)"
                 ;;
             7)
-                out+="${fgblu}Running Processes..: $(ps ax | wc -l | tr -d " ")"
+                out+="${fgpur}Running Processes..: $(ps ax | wc -l | tr -d " ")"
                 ;;
             8)
-                out+="${fgblu}IP Address.........: $(getIPAddress)"
+                out+="${fgpur}IP Address.........: $(getIPAddress)"
                 ;;
             9)
                 out+="Temperature........: CPU: ${cpuTempC}°C/${cpuTempF}°F GPU: ${gpuTempC}°C/${gpuTempF}°F"
