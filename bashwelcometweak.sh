@@ -12,11 +12,10 @@
 # Also includes the logo for PiHole for a little personalization
 #
 
-home=~/ # Primary home location
 
 function install_bashwelcometweak() {
     remove_bashwelcometweak
-    cat >> "$home/.bashrc" <<\_EOF_
+    cat >> "$HOME/.bashrc" <<\_EOF_
 #Rock64 PROFILE START
 function getIPAddress() {
     local ip_route
@@ -134,7 +133,7 @@ _EOF_
 }
 
 function remove_bashwelcometweak() {
-    sed -i '/ROCK64 PROFILE START/,/ROCK64 PROFILE END/d' "$home/.bashrc"
+    sed -i '/ROCK64 PROFILE START/,/ROCK64 PROFILE END/d' "$HOME/.bashrc"
 }
 
 function gui_bashwelcometweak() {
