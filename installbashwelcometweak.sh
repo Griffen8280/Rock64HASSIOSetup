@@ -11,9 +11,9 @@
 # Modified from the RetroPie project for PiHole
 # Also includes the logo for PiHole for a little personalization
 #
+user=$(who | cut -d' ' -f1)
 
-remove_bashwelcometweak
-cat >> "$HOME/.bashrc" <<\_EOF_
+cat >> "/home/$user/.bashrc" <<\_EOF_
 
 #ROCK64 PROFILE START
 function getIPAddress() {
