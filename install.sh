@@ -11,7 +11,7 @@ function run_installer(){
     #Update the system cache and install needed dependancies for all this to work
     apt update && $SUDO apt install python-smbus git python3 apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager apparmor avahi-daemon -y
 
-    #Create the choice array and get the choice from the user for a variable
+    #Create the choice array and get the choice from the user for a variable for Rock64 select raspberrypi3-64
     ch=("intel-nuc" "Intel Nuc computer" "odroid-c2" "The Odroid C2 or derivative machines" "odroid-n2"
     "Odroid-N2 or derivative machines" "odroid-xu" "Odroid-XU or derivative machines" "qemuarm"
     "32bit Arm based vm" "qemuarm-64" "64bit Arm based vm" "qemux86" "32bit x86 CPU based vm" "qemux86-64"
@@ -69,14 +69,8 @@ function run_installer(){
     sleep 5s
     curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh > hassioinstaller.sh
     chmod +x hassioinstaller.sh
-    #The following is the list of machine types you can specify and what they are for
-    #intel-nuc = Intel Nuc computer || odroid-c2 = The Odroid C2 or derivative machines
-    #odroid-n2 = Odroid-N2 or derivative machines || odroid-xu = Odroid-XU or derivative machines
-    #qemuarm = 32bit Arm based vm || qemuarm-64 = 64bit Arm based vm || qemux86 = 32bit x86 CPU based vm
-    #qemux86-64 = 64bit x86 CPU based vm || raspberrypi = Original 32bit pi || raspberrypi2 = Original 32bit pi2
-    #raspberrypi3 = Original 32bit pi3 || raspberrypi4 = Original 32bit pi4 || raspberrypi3-64 = Original 64bit pi3
-    #raspberrypi4-64 = Original 64bit pi4 || tinker = Asus Tinker board
-    /bin/bash ~/Rock64HASSIOSetup/hassioinstaller.sh -m $var  #For Rock64 raspberrypi3-64 will work here
+    #The following is the command to start the installer with the machine variable selected earlier
+    /bin/bash ~/Rock64HASSIOSetup/hassioinstaller.sh -m $var
     echo "All done with docker container pull"
     echo "Allowing initial startup to complete"
     sleep 10s
