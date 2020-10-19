@@ -1,15 +1,17 @@
 #! /bin/bash
 
-#Check for root and use it when needed
+#Check for root and escalate if not
 if [ "$EUID" != 0 ]; then
     sudo "$0" "$@"
     exit $?
 fi
 
-#Update the system cache and install needed dependancies for all this to work
-apt update && $SUDO apt install python-smbus git python3 apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager apparmor avahi-daemon -y
-
 function run_installer(){
+
+    #Update the system cache and install needed dependancies for all this to work
+    apt update && $SUDO apt install python-smbus git python3 apt-transport-https ca-certificates curl gnupg2 software-properties-common network-manager apparmor avahi-daemon -y
+
+    #Create the choice array and get the choice from the user for a variable
     ch=("intel-nuc" "Intel Nuc computer" "odroid-c2" "The Odroid C2 or derivative machines" "odroid-n2"
     "Odroid-N2 or derivative machines" "odroid-xu" "Odroid-XU or derivative machines" "qemuarm"
     "32bit Arm based vm" "qemuarm-64" "64bit Arm based vm" "qemux86" "32bit x86 CPU based vm" "qemux86-64"
@@ -99,16 +101,16 @@ function gui_installer() {
                 chmod +x installbashwelcometweak.sh
                 ./installbashwelcometweak.sh
                 dialog --title Complete --msgbox "Installed Bash Welcome Tweak." 22 30
-                ;;
+                gui_installer;;
             2)
                 chmod +x removebashwelcometweak.sh
                 ./removebashwelcomtweak.sh
                 dialog --title Complete --msgbox "Removed Bash Welcome Tweak." 22 30
-                ;;
+                gui_installer;;
             3)
                 run_installer
                 dialog --title Complete --msgbox "Installed Hassio!" 22 30
-                ;;
+                gui_installer;;
         esac
     fi
 }
