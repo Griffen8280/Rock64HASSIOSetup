@@ -104,7 +104,7 @@ function gui_installer() {
                 gui_installer;;
             2)
                 chmod +x removebashwelcometweak.sh
-                ./removebashwelcomtweak.sh
+                ./removebashwelcometweak.sh
                 dialog --title Complete --msgbox "Removed Bash Welcome Tweak." 22 30
                 gui_installer;;
             3)
