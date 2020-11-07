@@ -6,6 +6,9 @@ if [ "$EUID" != 0 ]; then
     exit $?
 fi
 
+#The menu system of this script relied on dialog, so we need to install it
+apt install dialog -y 
+
 function run_installer(){
 
     #Update the system cache and install needed dependancies for all this to work
