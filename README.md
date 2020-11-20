@@ -43,8 +43,9 @@ git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
 cd Rock64HASSIOSetup
 chmod +x install.sh (Note this step may not be needed, run ls -al before this command to see if it is executable already)
 sudo ./install.sh (if you forget the sudo the script will ask you for it)
+```
 At the end of the install it should give you the url to access the install (http://192.168.XXX.XXX:8123)
 Proceed to the website and let Home Assistant finish setting up.
 Once it gets to the primary user creation screen you can either proceed or reboot to get the LCD screen working
-```
+
 This process may take a bit of time to complete, keep a video going in another tab while you wait :).
