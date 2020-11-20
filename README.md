@@ -1,3 +1,13 @@
+<h1 align="center">Pihole Bash Welcome Tweak</h1>
+<div align="center">
+
+<a href="https://github.com/Griffen8280/Rock64HASSIOSetup/stargazers"><img src="https://img.shields.io/github/stars/Griffen8280/Rock64HASSIOSetup" alt="Stars Badge"/></a>
+<a href="https://github.com/Griffen8280/Rock64HASSIOSetup/network/members"><img src="https://img.shields.io/github/forks/Griffen8280/Rock64HASSIOSetup" alt="Forks Badge"/></a>
+<a href="https://github.com/Griffen8280/Rock64HASSIOSetup/pulls"><img src="https://img.shields.io/github/issues-pr/Griffen8280/Rock64HASSIOSetup" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/Griffen8280/Rock64HASSIOSetup/issues"><img src="https://img.shields.io/github/issues/Griffen8280/Rock64HASSIOSetup" alt="Issues Badge"/></a>
+<a href="https://github.com/Griffen8280/Rock64HASSIOSetup/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Griffen8280/Rock64HASSIOSetup?color=2b9348"></a>
+<a href="https://github.com/Griffen8280/Rock64HASSIOSetup/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Griffen8280/Rock64HASSIOSetup?color=2b9348" alt="License Badge"/></a> </div>
+
 # Rock64 Hass.io Installer
 Setup an I2C LCD screen(16x4) on a Rock64 running a debian-OS and the Home-Assistant Application  
 For Example mrfixit2001 maintains a great debian release for Rock64 here:  
@@ -27,13 +37,14 @@ The modules and scripts included here are to setup the LCD screen to output the 
 
 # Installation Instructions
 Run the following commands on the cli interface:  
-1. cd ~/
-2. git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
-3. cd Rock64HASSIOSetup
-4. chmod +x install.sh (Note this step may not be needed, run ls -al before this command to see if it is executable already)
-5. sudo ./install.sh (if you forget the sudo the script will ask you for it)
-6. At the end of the install it should give you the url to access the install (http://192.168.XXX.XXX:8123)
-7. Proceed to the website and let Home Assistant finish setting up.
-8. Once it gets to the primary user creation screen you can either proceed or reboot to get the LCD screen working
-
+```
+cd ~/
+git clone --depth=1 "https://github.com/Griffen8280/Rock64HASSIOSetup.git"
+cd Rock64HASSIOSetup
+chmod +x install.sh (Note this step may not be needed, run ls -al before this command to see if it is executable already)
+sudo ./install.sh (if you forget the sudo the script will ask you for it)
+At the end of the install it should give you the url to access the install (http://192.168.XXX.XXX:8123)
+Proceed to the website and let Home Assistant finish setting up.
+Once it gets to the primary user creation screen you can either proceed or reboot to get the LCD screen working
+```
 This process may take a bit of time to complete, keep a video going in another tab while you wait :).
