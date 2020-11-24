@@ -1,4 +1,4 @@
-<h1 align="center">Pihole Bash Welcome Tweak</h1>
+<h1 align="center">Rock 64 Home Assistant Setup</h1>
 <div align="center">
 
 <a href="https://github.com/Griffen8280/Rock64HASSIOSetup/stargazers"><img src="https://img.shields.io/github/stars/Griffen8280/Rock64HASSIOSetup" alt="Stars Badge"/></a>
